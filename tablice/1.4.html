@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<script>
+var tablica =[1, 5, 3, 7, 1, 2, 6, 3]
+
+function max(tablica){
+    var max=tablica[0];
+    for(var i=1;i<tablica.length;i++)
+        {if(tablica[i]>max)
+        max=tablica[i];
+        }
+    return max;
+}
+function min(tablica){
+    var min=tablica[0];
+    for(var i=1;i<tablica.length;i++)
+        {if(tablica[i]<min)
+        min=tablica[i];
+        }
+    return min;
+}
+function avg(tablica){
+    var avg=tablica[0];
+    for(var i=1;i<tablica.length;i++)
+        avg += tablica[i];
+    
+    return avg;
+}
+function sort(tab) {
+for(var i = 0; i < tab.length - 1; i++) {
+    for(var j = 0; j < tab.length - 1; j++) {
+            if(tab[j] > tab[j + 1]) {
+                    var z=tab[j];
+                    tab[j]=tab[j+1];
+                    tab[j+1]=z;
+            }
+        }
+    }
+}
+function mediana (tablica){
+    var zas_tab = tablica.slice();
+    sort(zas_tab);
+    if (zas_tab.length%2==0)
+        {
+            var licz1=zas_tab.length/2;
+            var licz2=licz1-1;
+            var med=zas_tab[licz1]+zas_tab[licz2]/2;
+        }
+    else
+        {
+            var licz= (zas_tab.length-1)/2;
+            var med=zas_tab[licz];
+        }
+    return med;
+}
+    document.write("Tablica:"+tablica+"</br> Max:"+max(tablica)+"</br> Min:"+min(tablica)+"</br> Średnia:"+avg(tablica)+"</br> Mediana:"+mediana(tablica))
+    </script>
+
+</body>
+</html>

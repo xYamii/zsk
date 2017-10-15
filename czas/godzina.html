@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<script>
+    window.onload = function()
+    {
+        function czas() {
+            var data = new Date();
+        var godzina = data.getHours();
+        var minuta = data.getMinutes();
+        var sekunda = data.getSeconds();
+            if(godzina <10)
+        document.getElementById("h").innerHTML="0"+godzina+":";
+        else
+                document.getElementById("h").innerHTML=godzina+":";
+        if( minuta<10)
+        document.getElementById("m").innerHTML="0"+minuta+":";
+        else
+                document.getElementById("m").innerHTML=minuta+":";
+        if(sekunda<10)
+        document.getElementById("s").innerHTML="0"+sekunda;
+        else
+                document.getElementById("s").innerHTML=sekunda;}
+    setInterval(czas,10)
+    }
+    </script>
+</head>
+<body>
+<p> Jest godzina <span id="h"></span><span id="m"></span><span id="s"></span></p>
+</body>
+</html> 
